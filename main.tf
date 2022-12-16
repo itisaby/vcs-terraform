@@ -13,6 +13,9 @@ provider "aws" {
   # Configuration options
   region = "us-east-1"
 }
+resource "aws_s3_bucket" "name" {
+  bucket = "arnab-terraform21323"
+}
 
 module "apache" {
   source        = "itisaby/apache/aws"
