@@ -1,5 +1,11 @@
 terraform {
+  cloud {
+    organization = "itisaby"
 
+    workspaces {
+      name = "vcs-terraform"
+    }
+  }
 }
 
 
@@ -9,7 +15,7 @@ provider "aws" {
 }
 
 module "apache" {
-  source        = ".//terraform-aws-apache-example"
+  source        = "itisaby/apache/aws"
   vpc_id        = var.vpc_id
   instance_type = var.instance_type
   public_key    = var.public_key
