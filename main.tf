@@ -17,6 +17,7 @@ resource "aws_s3_bucket" "name" {
   bucket = "arnab-terraform21323"
 }
 
+
 module "apache" {
   source        = "itisaby/apache/aws"
   vpc_id        = var.vpc_id
